@@ -16,6 +16,7 @@ module TD::Types
       voice_and_video_note
       mention
       unread_mention
+      unread_reaction
       failed_to_send
       pinned
     ].each do |type|

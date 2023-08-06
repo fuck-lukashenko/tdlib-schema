@@ -8,11 +8,12 @@ module TD::Types
   # @attr photo [TD::Types::ChatPhotoInfo, nil] Chat photo; may be null.
   # @attr permissions [TD::Types::ChatPermissions] Actions that non-administrator chat members are allowed to take in
   #   the chat.
-  # @attr last_message [TD::Types::Message, nil] Last message in the chat; may be null.
+  # @attr last_message [TD::Types::Message, nil] Last message in the chat; may be null if none or unknown.
   # @attr positions [Array<TD::Types::ChatPosition>] Positions of the chat in chat lists.
   # @attr message_sender_id [TD::Types::MessageSender, nil] Identifier of a user or chat that is selected to send
   #   messages in the chat; may be null if the user can't change message sender.
   # @attr has_protected_content [Boolean] True, if chat content can't be saved locally, forwarded, or copied.
+  # @attr is_translatable [Boolean] True, if translation of all messages in the chat must be suggested to the user.
   # @attr is_marked_as_unread [Boolean] True, if the chat is marked as unread.
   # @attr is_blocked [Boolean] True, if the chat is blocked by the current user and private messages from the chat
   #   can't be received.
@@ -28,20 +29,23 @@ module TD::Types
   # @attr last_read_inbox_message_id [Integer] Identifier of the last read incoming message.
   # @attr last_read_outbox_message_id [Integer] Identifier of the last read outgoing message.
   # @attr unread_mention_count [Integer] Number of unread messages with a mention/reply in the chat.
-  # @attr notification_settings [TD::Types::ChatNotificationSettings] Notification settings for this chat.
-  # @attr message_ttl [Integer] Current message Time To Live setting (self-destruct timer) for the chat; 0 if not
-  #   defined.
-  #   TTL is counted from the time message or its content is viewed in secret chats and from the send date in other
-  #   chats.
+  # @attr unread_reaction_count [Integer] Number of messages with unread reactions in the chat.
+  # @attr notification_settings [TD::Types::ChatNotificationSettings] Notification settings for the chat.
+  # @attr available_reactions [TD::Types::ChatAvailableReactions] Types of reaction, available in the chat.
+  # @attr message_auto_delete_time [Integer] Current message auto-delete or self-destruct timer setting for the chat,
+  #   in seconds; 0 if disabled.
+  #   Self-destruct timer in secret chats starts after the message or its content is viewed.
+  #   Auto-delete timer in other chats starts from the send date.
+  # @attr background [TD::Types::ChatBackground, nil] Background set for the chat; may be null if none.
   # @attr theme_name [TD::Types::String] If non-empty, name of a theme, set for the chat.
   # @attr action_bar [TD::Types::ChatActionBar, nil] Information about actions which must be possible to do through the
-  #   chat action bar; may be null.
+  #   chat action bar; may be null if none.
   # @attr video_chat [TD::Types::VideoChat] Information about video chat of the chat.
   # @attr pending_join_requests [TD::Types::ChatJoinRequestsInfo, nil] Information about pending join requests; may be
-  #   null.
+  #   null if none.
   # @attr reply_markup_message_id [Integer] Identifier of the message from which reply markup needs to be used; 0 if
   #   there is no default custom reply markup in the chat.
-  # @attr draft_message [TD::Types::DraftMessage, nil] A draft of a message in the chat; may be null.
+  # @attr draft_message [TD::Types::DraftMessage, nil] A draft of a message in the chat; may be null if none.
   # @attr client_data [TD::Types::String] Application-specific data associated with the chat.
   #   (For example, the chat scroll position or local chat notification settings can be stored here.) Persistent if the
   #   message database is used.
@@ -55,6 +59,7 @@ module TD::Types
     attribute :positions, TD::Types::Array.of(TD::Types::ChatPosition)
     attribute :message_sender_id, TD::Types::MessageSender.optional.default(nil)
     attribute :has_protected_content, TD::Types::Bool
+    attribute :is_translatable, TD::Types::Bool
     attribute :is_marked_as_unread, TD::Types::Bool
     attribute :is_blocked, TD::Types::Bool
     attribute :has_scheduled_messages, TD::Types::Bool
@@ -66,8 +71,11 @@ module TD::Types
     attribute :last_read_inbox_message_id, TD::Types::Coercible::Integer
     attribute :last_read_outbox_message_id, TD::Types::Coercible::Integer
     attribute :unread_mention_count, TD::Types::Coercible::Integer
+    attribute :unread_reaction_count, TD::Types::Coercible::Integer
     attribute :notification_settings, TD::Types::ChatNotificationSettings
-    attribute :message_ttl, TD::Types::Coercible::Integer
+    attribute :available_reactions, TD::Types::ChatAvailableReactions
+    attribute :message_auto_delete_time, TD::Types::Coercible::Integer
+    attribute :background, TD::Types::ChatBackground.optional.default(nil)
     attribute :theme_name, TD::Types::String
     attribute :action_bar, TD::Types::ChatActionBar.optional.default(nil)
     attribute :video_chat, TD::Types::VideoChat
