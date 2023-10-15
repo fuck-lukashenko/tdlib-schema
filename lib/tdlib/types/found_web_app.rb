@@ -2,6 +2,7 @@ module TD::Types
   # Contains information about a Web App found by its short name.
   #
   # @attr web_app [TD::Types::WebApp] The Web App.
+  # @attr supports_settings [Boolean] True, if the app supports "settings_button_pressed" event.
   # @attr request_write_access [Boolean] True, if the user must be asked for the permission to the bot to send them
   #   messages.
   # @attr skip_confirmation [Boolean] True, if there is no need to show an ordinary open URL confirmation before
@@ -9,6 +10,7 @@ module TD::Types
   #   The field must be ignored and confirmation must be shown anyway if the Web App link was hidden.
   class FoundWebApp < Base
     attribute :web_app, TD::Types::WebApp
+    attribute :supports_settings, TD::Types::Bool
     attribute :request_write_access, TD::Types::Bool
     attribute :skip_confirmation, TD::Types::Bool
   end

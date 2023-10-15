@@ -10,6 +10,7 @@ module TD::Types
       bot_start
       bot_start_in_group
       change_phone_number
+      chat_boost
       chat_folder_invite
       chat_folder_settings
       chat_invite
@@ -31,6 +32,7 @@ module TD::Types
       qr_code_authentication
       restore_purchases
       settings
+      side_menu_bot
       sticker_set
       story
       theme

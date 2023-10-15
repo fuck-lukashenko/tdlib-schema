@@ -12,11 +12,10 @@ module TD::Types
   # @attr positions [Array<TD::Types::ChatPosition>] Positions of the chat in chat lists.
   # @attr message_sender_id [TD::Types::MessageSender, nil] Identifier of a user or chat that is selected to send
   #   messages in the chat; may be null if the user can't change message sender.
+  # @attr block_list [TD::Types::BlockList, nil] Block list to which the chat is added; may be null if none.
   # @attr has_protected_content [Boolean] True, if chat content can't be saved locally, forwarded, or copied.
   # @attr is_translatable [Boolean] True, if translation of all messages in the chat must be suggested to the user.
   # @attr is_marked_as_unread [Boolean] True, if the chat is marked as unread.
-  # @attr is_blocked [Boolean] True, if the chat is blocked by the current user and private messages from the chat
-  #   can't be received.
   # @attr has_scheduled_messages [Boolean] True, if the chat has scheduled messages.
   # @attr can_be_deleted_only_for_self [Boolean] True, if the chat messages can be deleted only for the current user
   #   while other users will continue to see the messages.
@@ -58,10 +57,10 @@ module TD::Types
     attribute :last_message, TD::Types::Message.optional.default(nil)
     attribute :positions, TD::Types::Array.of(TD::Types::ChatPosition)
     attribute :message_sender_id, TD::Types::MessageSender.optional.default(nil)
+    attribute :block_list, TD::Types::BlockList.optional.default(nil)
     attribute :has_protected_content, TD::Types::Bool
     attribute :is_translatable, TD::Types::Bool
     attribute :is_marked_as_unread, TD::Types::Bool
-    attribute :is_blocked, TD::Types::Bool
     attribute :has_scheduled_messages, TD::Types::Bool
     attribute :can_be_deleted_only_for_self, TD::Types::Bool
     attribute :can_be_deleted_for_all_users, TD::Types::Bool

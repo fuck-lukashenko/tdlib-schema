@@ -40,7 +40,7 @@ module TD::Types
       chat_has_protected_content
       chat_is_translatable
       chat_is_marked_as_unread
-      chat_is_blocked
+      chat_block_list
       chat_has_scheduled_messages
       chat_folders
       chat_online_member_count
@@ -77,8 +77,11 @@ module TD::Types
       unread_chat_count
       story
       story_deleted
+      story_send_succeeded
+      story_send_failed
       chat_active_stories
       story_list_chat_count
+      story_stealth_mode
       option
       sticker_set
       installed_sticker_sets
@@ -93,6 +96,7 @@ module TD::Types
       connection_state
       terms_of_service
       users_nearby
+      unconfirmed_session
       attachment_menu_bots
       web_app_message_sent
       active_emoji_reactions

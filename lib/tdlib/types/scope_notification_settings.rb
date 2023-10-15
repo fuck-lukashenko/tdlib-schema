@@ -4,9 +4,9 @@ module TD::Types
   # @attr mute_for [Integer] Time left before notifications will be unmuted, in seconds.
   # @attr sound_id [Integer] Identifier of the notification sound to be played; 0 if sound is disabled.
   # @attr show_preview [Boolean] True, if message content must be displayed in notifications.
-  # @attr use_default_mute_stories [Boolean] If true, mute_stories is ignored and stories are unmuted only for the
-  #   first 5 chats from topChatCategoryUsers.
-  # @attr mute_stories [Boolean] True, if story notifications are received without sound.
+  # @attr use_default_mute_stories [Boolean] If true, mute_stories is ignored and story notifications are received only
+  #   for the first 5 chats from topChatCategoryUsers.
+  # @attr mute_stories [Boolean] True, if story notifications are disabled for the chat.
   # @attr story_sound_id [Integer] Identifier of the notification sound to be played for stories; 0 if sound is
   #   disabled.
   # @attr show_story_sender [Boolean] True, if the sender of stories must be displayed in notifications.

@@ -12,8 +12,8 @@ module TD::Types
   # @attr height [Integer] Photo height.
   # @attr caption [TD::Types::FormattedText] Photo caption; pass null to use an empty caption;
   #   0-getOption("message_caption_length_max") characters.
-  # @attr self_destruct_time [Integer] Photo self-destruct time, in seconds (0-60).
-  #   A non-zero self-destruct time can be specified only in private chats.
+  # @attr self_destruct_type [TD::Types::MessageSelfDestructType] Photo self-destruct type; pass null if none; private
+  #   chats only.
   # @attr has_spoiler [Boolean] True, if the photo preview must be covered by a spoiler animation; not supported in
   #   secret chats.
   class InputMessageContent::Photo < InputMessageContent
@@ -23,7 +23,7 @@ module TD::Types
     attribute :width, TD::Types::Coercible::Integer
     attribute :height, TD::Types::Coercible::Integer
     attribute :caption, TD::Types::FormattedText
-    attribute :self_destruct_time, TD::Types::Coercible::Integer
+    attribute :self_destruct_type, TD::Types::MessageSelfDestructType
     attribute :has_spoiler, TD::Types::Bool
   end
 end
