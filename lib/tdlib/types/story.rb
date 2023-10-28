@@ -4,18 +4,14 @@ module TD::Types
   # @attr id [Integer] Unique story identifier among stories of the given sender.
   # @attr sender_chat_id [Integer] Identifier of the chat that posted the story.
   # @attr date [Integer] Point in time (Unix timestamp) when the story was published.
-  # @attr is_being_sent [Boolean] True, if the story is being sent by the current user.
   # @attr is_being_edited [Boolean] True, if the story is being edited by the current user.
   # @attr is_edited [Boolean] True, if the story was edited.
   # @attr is_pinned [Boolean] True, if the story is saved in the sender's profile and will be available there after
   #   expiration.
   # @attr is_visible_only_for_self [Boolean] True, if the story is visible only for the current user.
-  # @attr can_be_deleted [Boolean] True, if the story can be deleted.
-  # @attr can_be_edited [Boolean] True, if the story can be edited.
   # @attr can_be_forwarded [Boolean] True, if the story can be forwarded as a message.
   #   Otherwise, screenshots and saving of the story content must be also forbidden.
   # @attr can_be_replied [Boolean] True, if the story can be replied in the chat with the story sender.
-  # @attr can_toggle_is_pinned [Boolean] True, if the story's is_pinned value can be changed.
   # @attr can_get_viewers [Boolean] True, if users viewed the story can be received through getStoryViewers.
   # @attr has_expired_viewers [Boolean] True, if users viewed the story can't be received, because the story has
   #   expired more than getOption("story_viewers_expiration_delay") seconds ago.
@@ -31,16 +27,12 @@ module TD::Types
     attribute :id, TD::Types::Coercible::Integer
     attribute :sender_chat_id, TD::Types::Coercible::Integer
     attribute :date, TD::Types::Coercible::Integer
-    attribute :is_being_sent, TD::Types::Bool
     attribute :is_being_edited, TD::Types::Bool
     attribute :is_edited, TD::Types::Bool
     attribute :is_pinned, TD::Types::Bool
     attribute :is_visible_only_for_self, TD::Types::Bool
-    attribute :can_be_deleted, TD::Types::Bool
-    attribute :can_be_edited, TD::Types::Bool
     attribute :can_be_forwarded, TD::Types::Bool
     attribute :can_be_replied, TD::Types::Bool
-    attribute :can_toggle_is_pinned, TD::Types::Bool
     attribute :can_get_viewers, TD::Types::Bool
     attribute :has_expired_viewers, TD::Types::Bool
     attribute :interaction_info, TD::Types::StoryInteractionInfo.optional.default(nil)

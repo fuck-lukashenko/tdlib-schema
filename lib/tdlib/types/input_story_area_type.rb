@@ -5,7 +5,6 @@ module TD::Types
       location
       found_venue
       previous_venue
-      suggested_reaction
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/input_story_area_type/#{type}"
     end

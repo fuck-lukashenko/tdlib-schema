@@ -77,8 +77,6 @@ module TD::Types
       unread_chat_count
       story
       story_deleted
-      story_send_succeeded
-      story_send_failed
       chat_active_stories
       story_list_chat_count
       story_stealth_mode
@@ -96,7 +94,6 @@ module TD::Types
       connection_state
       terms_of_service
       users_nearby
-      unconfirmed_session
       attachment_menu_bots
       web_app_message_sent
       active_emoji_reactions

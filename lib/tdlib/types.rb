@@ -173,10 +173,6 @@ module TD::Types
       'chatInviteLinkCounts'                                    => 'ChatInviteLinkCounts',
       'chatInviteLinkMember'                                    => 'ChatInviteLinkMember',
       'chatInviteLinkMembers'                                   => 'ChatInviteLinkMembers',
-      'InviteLinkChatType'                                      => 'InviteLinkChatType',
-      'inviteLinkChatTypeBasicGroup'                            => 'InviteLinkChatType::BasicGroup',
-      'inviteLinkChatTypeSupergroup'                            => 'InviteLinkChatType::Supergroup',
-      'inviteLinkChatTypeChannel'                               => 'InviteLinkChatType::Channel',
       'chatInviteLinkInfo'                                      => 'ChatInviteLinkInfo',
       'chatJoinRequest'                                         => 'ChatJoinRequest',
       'chatJoinRequests'                                        => 'ChatJoinRequests',
@@ -203,11 +199,11 @@ module TD::Types
       'messageForwardOriginChat'                                => 'MessageForwardOrigin::Chat',
       'messageForwardOriginHiddenUser'                          => 'MessageForwardOrigin::HiddenUser',
       'messageForwardOriginChannel'                             => 'MessageForwardOrigin::Channel',
+      'messageForwardOriginMessageImport'                       => 'MessageForwardOrigin::MessageImport',
       'ReactionType'                                            => 'ReactionType',
       'reactionTypeEmoji'                                       => 'ReactionType::Emoji',
       'reactionTypeCustomEmoji'                                 => 'ReactionType::CustomEmoji',
       'messageForwardInfo'                                      => 'MessageForwardInfo',
-      'messageImportInfo'                                       => 'MessageImportInfo',
       'messageReplyInfo'                                        => 'MessageReplyInfo',
       'messageReaction'                                         => 'MessageReaction',
       'messageInteractionInfo'                                  => 'MessageInteractionInfo',
@@ -561,6 +557,7 @@ module TD::Types
       'messageContactRegistered'                                => 'MessageContent::ContactRegistered',
       'messageUserShared'                                       => 'MessageContent::UserShared',
       'messageChatShared'                                       => 'MessageContent::ChatShared',
+      'messageWebsiteConnected'                                 => 'MessageContent::WebsiteConnected',
       'messageBotWriteAccessAllowed'                            => 'MessageContent::BotWriteAccessAllowed',
       'messageWebAppDataSent'                                   => 'MessageContent::WebAppDataSent',
       'messageWebAppDataReceived'                               => 'MessageContent::WebAppDataReceived',
@@ -593,9 +590,6 @@ module TD::Types
       'MessageSchedulingState'                                  => 'MessageSchedulingState',
       'messageSchedulingStateSendAtDate'                        => 'MessageSchedulingState::SendAtDate',
       'messageSchedulingStateSendWhenOnline'                    => 'MessageSchedulingState::SendWhenOnline',
-      'MessageSelfDestructType'                                 => 'MessageSelfDestructType',
-      'messageSelfDestructTypeTimer'                            => 'MessageSelfDestructType::Timer',
-      'messageSelfDestructTypeImmediately'                      => 'MessageSelfDestructType::Immediately',
       'messageSendOptions'                                      => 'MessageSendOptions',
       'messageCopyOptions'                                      => 'MessageCopyOptions',
       'InputMessageContent'                                     => 'InputMessageContent',
@@ -670,40 +664,6 @@ module TD::Types
       'emojiCategoryTypeDefault'                                => 'EmojiCategoryType::Default',
       'emojiCategoryTypeEmojiStatus'                            => 'EmojiCategoryType::EmojiStatus',
       'emojiCategoryTypeChatPhoto'                              => 'EmojiCategoryType::ChatPhoto',
-      'storyViewer'                                             => 'StoryViewer',
-      'storyViewers'                                            => 'StoryViewers',
-      'storyAreaPosition'                                       => 'StoryAreaPosition',
-      'StoryAreaType'                                           => 'StoryAreaType',
-      'storyAreaTypeLocation'                                   => 'StoryAreaType::Location',
-      'storyAreaTypeVenue'                                      => 'StoryAreaType::Venue',
-      'storyAreaTypeSuggestedReaction'                          => 'StoryAreaType::SuggestedReaction',
-      'storyArea'                                               => 'StoryArea',
-      'InputStoryAreaType'                                      => 'InputStoryAreaType',
-      'inputStoryAreaTypeLocation'                              => 'InputStoryAreaType::Location',
-      'inputStoryAreaTypeFoundVenue'                            => 'InputStoryAreaType::FoundVenue',
-      'inputStoryAreaTypePreviousVenue'                         => 'InputStoryAreaType::PreviousVenue',
-      'inputStoryAreaTypeSuggestedReaction'                     => 'InputStoryAreaType::SuggestedReaction',
-      'inputStoryArea'                                          => 'InputStoryArea',
-      'inputStoryAreas'                                         => 'InputStoryAreas',
-      'storyVideo'                                              => 'StoryVideo',
-      'StoryContent'                                            => 'StoryContent',
-      'storyContentPhoto'                                       => 'StoryContent::Photo',
-      'storyContentVideo'                                       => 'StoryContent::Video',
-      'storyContentUnsupported'                                 => 'StoryContent::Unsupported',
-      'InputStoryContent'                                       => 'InputStoryContent',
-      'inputStoryContentPhoto'                                  => 'InputStoryContent::Photo',
-      'inputStoryContentVideo'                                  => 'InputStoryContent::Video',
-      'StoryList'                                               => 'StoryList',
-      'storyListMain'                                           => 'StoryList::Main',
-      'storyListArchive'                                        => 'StoryList::Archive',
-      'storyInteractionInfo'                                    => 'StoryInteractionInfo',
-      'story'                                                   => 'Story',
-      'stories'                                                 => 'Stories',
-      'storyInfo'                                               => 'StoryInfo',
-      'chatActiveStories'                                       => 'ChatActiveStories',
-      'chatBoostStatus'                                         => 'ChatBoostStatus',
-      'chatBoost'                                               => 'ChatBoost',
-      'foundChatBoosts'                                         => 'FoundChatBoosts',
       'CallDiscardReason'                                       => 'CallDiscardReason',
       'callDiscardReasonEmpty'                                  => 'CallDiscardReason::Empty',
       'callDiscardReasonMissed'                                 => 'CallDiscardReason::Missed',
@@ -768,11 +728,6 @@ module TD::Types
       'attachmentMenuBotColor'                                  => 'AttachmentMenuBotColor',
       'attachmentMenuBot'                                       => 'AttachmentMenuBot',
       'sentWebAppMessage'                                       => 'SentWebAppMessage',
-      'BotWriteAccessAllowReason'                               => 'BotWriteAccessAllowReason',
-      'botWriteAccessAllowReasonConnectedWebsite'               => 'BotWriteAccessAllowReason::ConnectedWebsite',
-      'botWriteAccessAllowReasonAddedToAttachmentMenu'          => 'BotWriteAccessAllowReason::AddedToAttachmentMenu',
-      'botWriteAccessAllowReasonLaunchedWebApp'                 => 'BotWriteAccessAllowReason::LaunchedWebApp',
-      'botWriteAccessAllowReasonAcceptedRequest'                => 'BotWriteAccessAllowReason::AcceptedRequest',
       'httpUrl'                                                 => 'HttpUrl',
       'userLink'                                                => 'UserLink',
       'InputInlineQueryResult'                                  => 'InputInlineQueryResult',
@@ -884,10 +839,7 @@ module TD::Types
       'premiumLimitTypeChatFolderInviteLinkCount'               => 'PremiumLimitType::ChatFolderInviteLinkCount',
       'premiumLimitTypeShareableChatFolderCount'                => 'PremiumLimitType::ShareableChatFolderCount',
       'premiumLimitTypeActiveStoryCount'                        => 'PremiumLimitType::ActiveStoryCount',
-      'premiumLimitTypeWeeklySentStoryCount'                    => 'PremiumLimitType::WeeklySentStoryCount',
-      'premiumLimitTypeMonthlySentStoryCount'                   => 'PremiumLimitType::MonthlySentStoryCount',
       'premiumLimitTypeStoryCaptionLength'                      => 'PremiumLimitType::StoryCaptionLength',
-      'premiumLimitTypeStorySuggestedReactionAreaCount'         => 'PremiumLimitType::StorySuggestedReactionAreaCount',
       'PremiumFeature'                                          => 'PremiumFeature',
       'premiumFeatureIncreasedLimits'                           => 'PremiumFeature::IncreasedLimits',
       'premiumFeatureIncreasedUploadFileSize'                   => 'PremiumFeature::IncreasedUploadFileSize',
@@ -905,7 +857,6 @@ module TD::Types
       'premiumFeatureAppIcons'                                  => 'PremiumFeature::AppIcons',
       'premiumFeatureRealTimeChatTranslation'                   => 'PremiumFeature::RealTimeChatTranslation',
       'premiumFeatureUpgradedStories'                           => 'PremiumFeature::UpgradedStories',
-      'premiumFeatureChatBoost'                                 => 'PremiumFeature::ChatBoost',
       'PremiumStoryFeature'                                     => 'PremiumStoryFeature',
       'premiumStoryFeaturePriorityOrder'                        => 'PremiumStoryFeature::PriorityOrder',
       'premiumStoryFeatureStealthMode'                          => 'PremiumStoryFeature::StealthMode',
@@ -955,20 +906,6 @@ module TD::Types
       'themeSettings'                                           => 'ThemeSettings',
       'chatTheme'                                               => 'ChatTheme',
       'hashtags'                                                => 'Hashtags',
-      'CanSendStoryResult'                                      => 'CanSendStoryResult',
-      'canSendStoryResultOk'                                    => 'CanSendStoryResult::Ok',
-      'canSendStoryResultPremiumNeeded'                         => 'CanSendStoryResult::PremiumNeeded',
-      'canSendStoryResultBoostNeeded'                           => 'CanSendStoryResult::BoostNeeded',
-      'canSendStoryResultActiveStoryLimitExceeded'              => 'CanSendStoryResult::ActiveStoryLimitExceeded',
-      'canSendStoryResultWeeklyLimitExceeded'                   => 'CanSendStoryResult::WeeklyLimitExceeded',
-      'canSendStoryResultMonthlyLimitExceeded'                  => 'CanSendStoryResult::MonthlyLimitExceeded',
-      'CanBoostChatResult'                                      => 'CanBoostChatResult',
-      'canBoostChatResultOk'                                    => 'CanBoostChatResult::Ok',
-      'canBoostChatResultInvalidChat'                           => 'CanBoostChatResult::InvalidChat',
-      'canBoostChatResultAlreadyBoosted'                        => 'CanBoostChatResult::AlreadyBoosted',
-      'canBoostChatResultPremiumNeeded'                         => 'CanBoostChatResult::PremiumNeeded',
-      'canBoostChatResultPremiumSubscriptionNeeded'             => 'CanBoostChatResult::PremiumSubscriptionNeeded',
-      'canBoostChatResultWaitNeeded'                            => 'CanBoostChatResult::WaitNeeded',
       'CanTransferOwnershipResult'                              => 'CanTransferOwnershipResult',
       'canTransferOwnershipResultOk'                            => 'CanTransferOwnershipResult::Ok',
       'canTransferOwnershipResultPasswordNeeded'                => 'CanTransferOwnershipResult::PasswordNeeded',
@@ -1057,7 +994,7 @@ module TD::Types
       'storyPrivacySettingsEveryone'                            => 'StoryPrivacySettings::Everyone',
       'storyPrivacySettingsContacts'                            => 'StoryPrivacySettings::Contacts',
       'storyPrivacySettingsCloseFriends'                        => 'StoryPrivacySettings::CloseFriends',
-      'storyPrivacySettingsSelectedUsers'                       => 'StoryPrivacySettings::SelectedUsers',
+      'storyPrivacySettingsSelectedContacts'                    => 'StoryPrivacySettings::SelectedContacts',
       'UserPrivacySettingRule'                                  => 'UserPrivacySettingRule',
       'userPrivacySettingRuleAllowAll'                          => 'UserPrivacySettingRule::AllowAll',
       'userPrivacySettingRuleAllowContacts'                     => 'UserPrivacySettingRule::AllowContacts',
@@ -1101,7 +1038,6 @@ module TD::Types
       'sessionTypeXbox'                                         => 'SessionType::Xbox',
       'session'                                                 => 'Session',
       'sessions'                                                => 'Sessions',
-      'unconfirmedSession'                                      => 'UnconfirmedSession',
       'connectedWebsite'                                        => 'ConnectedWebsite',
       'connectedWebsites'                                       => 'ConnectedWebsites',
       'ReportReason'                                            => 'ReportReason',
@@ -1128,7 +1064,6 @@ module TD::Types
       'internalLinkTypeBotStart'                                => 'InternalLinkType::BotStart',
       'internalLinkTypeBotStartInGroup'                         => 'InternalLinkType::BotStartInGroup',
       'internalLinkTypeChangePhoneNumber'                       => 'InternalLinkType::ChangePhoneNumber',
-      'internalLinkTypeChatBoost'                               => 'InternalLinkType::ChatBoost',
       'internalLinkTypeChatFolderInvite'                        => 'InternalLinkType::ChatFolderInvite',
       'internalLinkTypeChatFolderSettings'                      => 'InternalLinkType::ChatFolderSettings',
       'internalLinkTypeChatInvite'                              => 'InternalLinkType::ChatInvite',
@@ -1150,7 +1085,6 @@ module TD::Types
       'internalLinkTypeQrCodeAuthentication'                    => 'InternalLinkType::QrCodeAuthentication',
       'internalLinkTypeRestorePurchases'                        => 'InternalLinkType::RestorePurchases',
       'internalLinkTypeSettings'                                => 'InternalLinkType::Settings',
-      'internalLinkTypeSideMenuBot'                             => 'InternalLinkType::SideMenuBot',
       'internalLinkTypeStickerSet'                              => 'InternalLinkType::StickerSet',
       'internalLinkTypeStory'                                   => 'InternalLinkType::Story',
       'internalLinkTypeTheme'                                   => 'InternalLinkType::Theme',
@@ -1163,8 +1097,33 @@ module TD::Types
       'internalLinkTypeWebApp'                                  => 'InternalLinkType::WebApp',
       'messageLink'                                             => 'MessageLink',
       'messageLinkInfo'                                         => 'MessageLinkInfo',
-      'chatBoostLink'                                           => 'ChatBoostLink',
-      'chatBoostLinkInfo'                                       => 'ChatBoostLinkInfo',
+      'storyAreaPosition'                                       => 'StoryAreaPosition',
+      'StoryAreaType'                                           => 'StoryAreaType',
+      'storyAreaTypeLocation'                                   => 'StoryAreaType::Location',
+      'storyAreaTypeVenue'                                      => 'StoryAreaType::Venue',
+      'storyArea'                                               => 'StoryArea',
+      'InputStoryAreaType'                                      => 'InputStoryAreaType',
+      'inputStoryAreaTypeLocation'                              => 'InputStoryAreaType::Location',
+      'inputStoryAreaTypeFoundVenue'                            => 'InputStoryAreaType::FoundVenue',
+      'inputStoryAreaTypePreviousVenue'                         => 'InputStoryAreaType::PreviousVenue',
+      'inputStoryArea'                                          => 'InputStoryArea',
+      'inputStoryAreas'                                         => 'InputStoryAreas',
+      'storyVideo'                                              => 'StoryVideo',
+      'StoryContent'                                            => 'StoryContent',
+      'storyContentPhoto'                                       => 'StoryContent::Photo',
+      'storyContentVideo'                                       => 'StoryContent::Video',
+      'storyContentUnsupported'                                 => 'StoryContent::Unsupported',
+      'InputStoryContent'                                       => 'InputStoryContent',
+      'inputStoryContentPhoto'                                  => 'InputStoryContent::Photo',
+      'inputStoryContentVideo'                                  => 'InputStoryContent::Video',
+      'StoryList'                                               => 'StoryList',
+      'storyListMain'                                           => 'StoryList::Main',
+      'storyListArchive'                                        => 'StoryList::Archive',
+      'storyInteractionInfo'                                    => 'StoryInteractionInfo',
+      'story'                                                   => 'Story',
+      'stories'                                                 => 'Stories',
+      'storyInfo'                                               => 'StoryInfo',
+      'chatActiveStories'                                       => 'ChatActiveStories',
       'BlockList'                                               => 'BlockList',
       'blockListMain'                                           => 'BlockList::Main',
       'blockListStories'                                        => 'BlockList::Stories',
@@ -1228,7 +1187,6 @@ module TD::Types
       'topChatCategoryInlineBots'                               => 'TopChatCategory::InlineBots',
       'topChatCategoryCalls'                                    => 'TopChatCategory::Calls',
       'topChatCategoryForwardChats'                             => 'TopChatCategory::ForwardChats',
-      'foundPositions'                                          => 'FoundPositions',
       'TMeUrlType'                                              => 'TMeUrlType',
       'tMeUrlTypeUser'                                          => 'TMeUrlType::User',
       'tMeUrlTypeSupergroup'                                    => 'TMeUrlType::Supergroup',
@@ -1363,8 +1321,6 @@ module TD::Types
       'updateUnreadChatCount'                                   => 'Update::UnreadChatCount',
       'updateStory'                                             => 'Update::Story',
       'updateStoryDeleted'                                      => 'Update::StoryDeleted',
-      'updateStorySendSucceeded'                                => 'Update::StorySendSucceeded',
-      'updateStorySendFailed'                                   => 'Update::StorySendFailed',
       'updateChatActiveStories'                                 => 'Update::ChatActiveStories',
       'updateStoryListChatCount'                                => 'Update::StoryListChatCount',
       'updateStoryStealthMode'                                  => 'Update::StoryStealthMode',
@@ -1382,7 +1338,6 @@ module TD::Types
       'updateConnectionState'                                   => 'Update::ConnectionState',
       'updateTermsOfService'                                    => 'Update::TermsOfService',
       'updateUsersNearby'                                       => 'Update::UsersNearby',
-      'updateUnconfirmedSession'                                => 'Update::UnconfirmedSession',
       'updateAttachmentMenuBots'                                => 'Update::AttachmentMenuBots',
       'updateWebAppMessageSent'                                 => 'Update::WebAppMessageSent',
       'updateActiveEmojiReactions'                              => 'Update::ActiveEmojiReactions',
@@ -1488,7 +1443,6 @@ module TD::Types
     bot_commands
     bot_info
     bot_menu_button
-    bot_write_access_allow_reason
     call
     call_discard_reason
     call_id
@@ -1499,8 +1453,6 @@ module TD::Types
     call_state
     callback_query_answer
     callback_query_payload
-    can_boost_chat_result
-    can_send_story_result
     can_transfer_ownership_result
     chat
     chat_action
@@ -1511,10 +1463,6 @@ module TD::Types
     chat_administrators
     chat_available_reactions
     chat_background
-    chat_boost
-    chat_boost_link
-    chat_boost_link_info
-    chat_boost_status
     chat_event
     chat_event_action
     chat_event_log_filters
@@ -1608,11 +1556,9 @@ module TD::Types
     forum_topic_icon
     forum_topic_info
     forum_topics
-    found_chat_boosts
     found_chat_messages
     found_file_downloads
     found_messages
-    found_positions
     found_web_app
     game
     game_high_score
@@ -1655,7 +1601,6 @@ module TD::Types
     input_story_content
     input_thumbnail
     internal_link_type
-    invite_link_chat_type
     invoice
     json_object_member
     json_value
@@ -1685,7 +1630,6 @@ module TD::Types
     message_file_type
     message_forward_info
     message_forward_origin
-    message_import_info
     message_interaction_info
     message_link
     message_link_info
@@ -1695,7 +1639,6 @@ module TD::Types
     message_reply_info
     message_reply_to
     message_scheduling_state
-    message_self_destruct_type
     message_send_options
     message_sender
     message_senders
@@ -1822,8 +1765,6 @@ module TD::Types
     story_list
     story_privacy_settings
     story_video
-    story_viewer
-    story_viewers
     suggested_action
     supergroup
     supergroup_full_info
@@ -1845,7 +1786,6 @@ module TD::Types
     thumbnail_format
     top_chat_category
     trending_sticker_sets
-    unconfirmed_session
     unread_reaction
     update
     updates

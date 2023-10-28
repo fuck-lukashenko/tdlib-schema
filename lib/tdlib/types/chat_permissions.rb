@@ -5,8 +5,8 @@ module TD::Types
   #   and venues.
   # @attr can_send_audios [Boolean] True, if the user can send music files.
   # @attr can_send_documents [Boolean] True, if the user can send documents.
-  # @attr can_send_photos [Boolean] True, if the user can send photos.
-  # @attr can_send_videos [Boolean] True, if the user can send videos.
+  # @attr can_send_photos [Boolean] True, if the user can send audio photos.
+  # @attr can_send_videos [Boolean] True, if the user can send audio videos.
   # @attr can_send_video_notes [Boolean] True, if the user can send video notes.
   # @attr can_send_voice_notes [Boolean] True, if the user can send voice notes.
   # @attr can_send_polls [Boolean] True, if the user can send polls.

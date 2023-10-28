@@ -12,7 +12,7 @@ module TD::Types
   # @attr show_preview [Boolean] True, if message content must be displayed in notifications.
   # @attr use_default_mute_stories [Boolean] If true, mute_stories is ignored and the value for the relevant type of
   #   chat is used instead.
-  # @attr mute_stories [Boolean] True, if story notifications are disabled for the chat.
+  # @attr mute_stories [Boolean] True, if story notifications are received without sound.
   # @attr use_default_story_sound [Boolean] If true, the value for the relevant type of chat is used instead of
   #   story_sound_id.
   # @attr story_sound_id [Integer] Identifier of the notification sound to be played for stories; 0 if sound is

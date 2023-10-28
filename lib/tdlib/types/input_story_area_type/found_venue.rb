@@ -1,5 +1,5 @@
 module TD::Types
-  # An area pointing to a venue found by the bot getOption("venue_search_bot_username").
+  # An area pointing to a venue found by the bot GetOption("venue_search_bot_username").
   #
   # @attr query_id [Integer] Identifier of the inline query, used to found the venue.
   # @attr result_id [TD::Types::String] Identifier of the inline query result.

@@ -56,6 +56,7 @@ module TD::Types
       contact_registered
       user_shared
       chat_shared
+      website_connected
       bot_write_access_allowed
       web_app_data_sent
       web_app_data_received

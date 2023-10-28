@@ -39,8 +39,6 @@ module TD::Types
   # @attr edit_date [Integer] Point in time (Unix timestamp) when the message was last edited.
   # @attr forward_info [TD::Types::MessageForwardInfo, nil] Information about the initial message sender; may be null
   #   if none or unknown.
-  # @attr import_info [TD::Types::MessageImportInfo, nil] Information about the initial message for messages created
-  #   with importMessages; may be null if the message isn't imported.
   # @attr interaction_info [TD::Types::MessageInteractionInfo, nil] Information about interactions with the message;
   #   may be null if none.
   # @attr unread_reactions [Array<TD::Types::UnreadReaction>] Information about unread reactions added to the message.
@@ -48,12 +46,13 @@ module TD::Types
   #   to; may be null if none.
   # @attr message_thread_id [Integer] If non-zero, the identifier of the message thread the message belongs to; unique
   #   within the chat to which the message belongs.
-  # @attr self_destruct_type [TD::Types::MessageSelfDestructType, nil] The message's self-destruct type; may be null if
-  #   none.
-  # @attr self_destruct_in [Float] Time left before the message self-destruct timer expires, in seconds; 0 if
-  #   self-desctruction isn't scheduled yet.
+  # @attr self_destruct_time [Integer] The message's self-destruct time, in seconds; 0 if none.
+  #   TDLib will send {TD::Types::Update::DeleteMessages} or {TD::Types::Update::MessageContent} once the time expires.
+  # @attr self_destruct_in [Float] Time left before the message self-destruct timer expires, in seconds.
+  #   If the self-destruct timer isn't started yet, equals to the value of the self_destruct_time field.
   # @attr auto_delete_in [Float] Time left before the message will be automatically deleted by message_auto_delete_time
   #   setting of the chat, in seconds; 0 if never.
+  #   TDLib will send {TD::Types::Update::DeleteMessages} or {TD::Types::Update::MessageContent} once the time expires.
   # @attr via_bot_user_id [Integer] If non-zero, the user identifier of the bot through which this message was sent.
   # @attr author_signature [TD::Types::String, nil] For channel posts and anonymous group messages, optional author
   #   signature.
@@ -89,12 +88,11 @@ module TD::Types
     attribute :date, TD::Types::Coercible::Integer
     attribute :edit_date, TD::Types::Coercible::Integer
     attribute :forward_info, TD::Types::MessageForwardInfo.optional.default(nil)
-    attribute :import_info, TD::Types::MessageImportInfo.optional.default(nil)
     attribute :interaction_info, TD::Types::MessageInteractionInfo.optional.default(nil)
     attribute :unread_reactions, TD::Types::Array.of(TD::Types::UnreadReaction)
     attribute :reply_to, TD::Types::MessageReplyTo.optional.default(nil)
     attribute :message_thread_id, TD::Types::Coercible::Integer
-    attribute :self_destruct_type, TD::Types::MessageSelfDestructType.optional.default(nil)
+    attribute :self_destruct_time, TD::Types::Coercible::Integer
     attribute :self_destruct_in, TD::Types::Coercible::Float
     attribute :auto_delete_in, TD::Types::Coercible::Float
     attribute :via_bot_user_id, TD::Types::Coercible::Integer

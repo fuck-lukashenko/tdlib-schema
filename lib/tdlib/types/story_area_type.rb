@@ -4,7 +4,6 @@ module TD::Types
     %w[
       location
       venue
-      suggested_reaction
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/story_area_type/#{type}"
     end

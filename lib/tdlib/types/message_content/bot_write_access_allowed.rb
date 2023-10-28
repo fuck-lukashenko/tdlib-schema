@@ -1,8 +1,9 @@
 module TD::Types
   # The user allowed the bot to send messages.
   #
-  # @attr reason [TD::Types::BotWriteAccessAllowReason] The reason why the bot was allowed to write messages.
+  # @attr web_app [TD::Types::WebApp, nil] Information about the Web App, which requested the access; may be null if
+  #   none or the Web App was opened from the attachment menu.
   class MessageContent::BotWriteAccessAllowed < MessageContent
-    attribute :reason, TD::Types::BotWriteAccessAllowReason
+    attribute :web_app, TD::Types::WebApp.optional.default(nil)
   end
 end

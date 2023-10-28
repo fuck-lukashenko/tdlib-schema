@@ -6,6 +6,7 @@ module TD::Types
       chat
       hidden_user
       channel
+      message_import
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/message_forward_origin/#{type}"
     end

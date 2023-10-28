@@ -33,7 +33,6 @@ module TD::Types
   # @attr has_aggressive_anti_spam_enabled [Boolean] True, if aggressive anti-spam checks are enabled in the
   #   supergroup.
   #   The value of this field is only available to chat administrators.
-  # @attr has_pinned_stories [Boolean] True, if the channel has pinned stories.
   # @attr sticker_set_id [Integer] Identifier of the supergroup sticker set; 0 if none.
   # @attr location [TD::Types::ChatLocation, nil] Location to which the supergroup is connected; may be null if none.
   # @attr invite_link [TD::Types::ChatInviteLink, nil] Primary invite link for the chat; may be null.
@@ -62,7 +61,6 @@ module TD::Types
     attribute :can_toggle_aggressive_anti_spam, TD::Types::Bool
     attribute :is_all_history_available, TD::Types::Bool
     attribute :has_aggressive_anti_spam_enabled, TD::Types::Bool
-    attribute :has_pinned_stories, TD::Types::Bool
     attribute :sticker_set_id, TD::Types::Coercible::Integer
     attribute :location, TD::Types::ChatLocation.optional.default(nil)
     attribute :invite_link, TD::Types::ChatInviteLink.optional.default(nil)

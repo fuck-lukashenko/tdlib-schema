@@ -36,9 +36,6 @@ module TD::Types
   #   access to this supergroup or channel must be restricted.
   # @attr is_scam [Boolean] True, if many users reported this supergroup or channel as a scam.
   # @attr is_fake [Boolean] True, if many users reported this supergroup or channel as a fake account.
-  # @attr has_active_stories [Boolean] True, if the channel has non-expired stories available to the current user.
-  # @attr has_unread_active_stories [Boolean] True, if the channel has unread non-expired stories available to the
-  #   current user.
   class Supergroup < Base
     attribute :id, TD::Types::Coercible::Integer
     attribute :usernames, TD::Types::Usernames.optional.default(nil)
@@ -58,7 +55,5 @@ module TD::Types
     attribute :restriction_reason, TD::Types::String
     attribute :is_scam, TD::Types::Bool
     attribute :is_fake, TD::Types::Bool
-    attribute :has_active_stories, TD::Types::Bool
-    attribute :has_unread_active_stories, TD::Types::Bool
   end
 end

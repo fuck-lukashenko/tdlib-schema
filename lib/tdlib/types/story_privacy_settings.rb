@@ -5,7 +5,7 @@ module TD::Types
       everyone
       contacts
       close_friends
-      selected_users
+      selected_contacts
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/story_privacy_settings/#{type}"
     end
